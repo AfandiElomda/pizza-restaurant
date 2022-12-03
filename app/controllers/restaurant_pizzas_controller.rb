@@ -13,7 +13,7 @@ class RestaurantPizzasController < ApplicationController
     end
 
     def render_record_invalid(exception)
-        render json:{ errors: ["validation errors"]}, status: :unprocessable_entity
+        render json:{ errors: exception.record.errors.full_messages}, status: :unprocessable_entity
     end
 
 end
